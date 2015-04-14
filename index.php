@@ -1,8 +1,6 @@
 <?php
 
 include 'lib/db.php';
+include 'lib/base.php';
 
-$db = new Db();
-
-$q = $db->query('SHOW DATABASES');
-print_r($q->assoc());
+new App(substr($_SERVER['REQUEST_URI'], 2));

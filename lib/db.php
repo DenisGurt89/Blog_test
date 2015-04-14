@@ -33,4 +33,13 @@ class Db
 	{
 		return $this->last->fetch_assoc();
 	}
+
+	public function all()
+	{
+		$result = array();
+		while ($row = $this->last->fetch_assoc()) {
+			$result[] = $row;
+		}
+		return $result;
+	}
 }
